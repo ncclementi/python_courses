@@ -1,0 +1,91 @@
+* Opening a File
+    
+    - We use the built in function open(), returns a handle (mechanism that you
+     can use to get the data) to manipulate the file.  
+    
+        handle = open(filname, mode)
+
+        - filaname is a string
+        - mode is optional, should be 'r' if we are planning reading the file
+          and 'w' if we are going to write the file. 
+
+        - the act of opening doesn't mean we are reading the data in it. 
+
+* newline character \n
+
+    >>> stuff = 'Hello\nWorld!'
+    >>> stuff
+    'Hello\nWorld!'
+    >>> print stuff
+    Hello
+    World!   
+  
+    >>> len(stuff)
+    12 #it counts the character '\n' 
+
+
+* File Handle as a Sequence
+
+    - A 'file handle' open for read can be treated as a sequence of string 
+      where each line in the file is a string in the sequence.
+
+    - We can use the 'for' statement to iterate through a sequence.
+
+        xfile = open('mbox.txt')
+    
+        for line in xfile:
+            print line      # this is a way of reading.
+   
+    - We can count the lines in a file by using a counter and a for loop.
+
+* We can read the whole file (newlines and all), but it's not going to be break
+  down into lines. It's a long string.
+
+    - Not recomended for big files, it's not going to fit in primary memory.
+
+* Searching through a file:
+
+    fhand = open('file.txt')
+    for line in fhand:
+        if line.startswith('From:'):
+            print line
+
+    Notes:
+     
+    - The 'print' adds newline to each line
+    - If each line of a file has a newline, we will end with blank lines in 
+      between the lines printed. 
+
+    In this case we can use rstrip() to strip the lines before printing them.
+    
+        - newlines '\n' are whitspaces, so we can strip them.
+
+* We can skip lines by using 'continue'. This is a good patern when you have lot
+  of lines
+
+    fhand = open('file.txt')
+        for line in fhand:
+            line = line.rstrip()
+            #Skip 'uninteresting lines'
+            if not line.startswith('From:'):
+                continue                
+            # Process our 'interesting' line
+            print line
+
+* We can use 'in' to select lines.
+
+        fhand = open('file.txt')
+        for line in fhand:
+            line = line.rstrip()
+
+            if not '@uct.ac.za' in line:
+                continue                
+
+            print line
+
+
+
+
+
+
+     

@@ -1,0 +1,135 @@
+* Lists, dictionaries and tuples are kinds of Collection.
+
+    - A collection allows us to put many values in a single "variable".
+    - it's convinient because we can carry all many values around in one
+      convinient package.
+
+    - Simple variables are NOT "Collections".
+
+* List Constants:
+
+    - List constants are surrounded by square brackets and its elements 
+      separated by commas.
+    - A list element can be any Python object, even another list.
+    - A list can be empty. 
+
+    - Lists and definite loops - best pals! 
+    
+    - We can access elements in a list by doing list[i]. 
+
+    - Lists are MUTABLE, string are NOT MUTABLE.
+
+         >>> lotto = [2,50,4,61]
+         >>> print lotto
+         [2,50,4,61]
+         >>> lotto [2] = 1
+         >>> print lotto
+         [2,1,4,61]   # Notice we ahave 1 instead of 50 now!!!
+    
+    - len() function gives as the number of elements of the list.
+
+* The range function generates a list. 
+
+    >>> print range(4)
+    [0, 1, 2, 3]
+
+    - We can use this for creating an index loop using for and an integer
+      iterator.
+
+        >>> list = ['a', 'b', 'c']
+        >>> print len(list)
+        3
+        >>> print range(len(list))
+        [0, 1, 2]
+
+    - We can do :
+
+        >>> for i in range(len(list))
+        >>> friend = list[i]
+        print 'Hi:', friend
+
+
+* Properties:
+
+    - We can concatenate lists using '+'
+    - We can slice lists like we did with strings.
+
+* Built in functions, there are many, we can use the function dir(list) to see
+  what we can do. Example:
+
+    - append() : we can create an empty list and then append elements.
+                 The list stays in order and elements are added at the end.
+
+            >>> stuff = list() # we can also use stuff = []
+            >>> stuff.append('book')
+            >>> stuff.append(99)
+            print stuff
+            ['book', 99]
+
+    - Other built in functions are: len(), max(), min(), sum()
+            
+* We can check if something is or not in a list:                
+
+    >>> some = [1, 9, 21, 10, 16]                
+    >>> 9 in some
+    True
+    >>> 15 in some
+    False
+    >>> 20 not in some
+    True
+
+    Note: This operators does NOT modify the list.
+
+* A list is and Ordered sequence.
+
+     We can change the order by sorting a list. Example:
+
+        >>> friends = ['Joseph', 'Glenn', 'Sally']
+        >>> friends.sort()
+        >>> print friends  
+        ['Glenn', 'Joseph', 'Sally']
+        >>> print friends[1]
+        Joseph
+
+* String and lists. split() function
+
+    >>> abc   = 'With three words'
+    >>> stuff = abc.split()
+    >>> print stuff 
+    ['With', 'three', 'words']
+    >>> print len(stuff)
+    3
+    >>> print stuff[0]
+    With  
+
+    Note: python look at the spaces and take care of them, if there is a long
+          space (to many spaces) it counts as one! unless you specify a delimiter
+
+         >>> line = 'A lot      of space'
+         >>> etc = line.split()
+         >>> print etc   
+         ['A', 'lot', 'of', 'space']
+
+    If we do specify ' ' as a delimiter we will see:
+    
+         >>> line = 'A lot      of space'
+         >>> etc = line.split(' ')
+         >>> print etc
+         ['A', 'lot', '', '', '', '', '', 'of', 'space']
+   
+    ';' is not a default delimiter
+    
+         >>> line = 'a;b;c'
+         >>> thing = line.split()
+         >>> print thing
+         ['a;b;c']
+
+         >>> thing = line.split(';')
+         >>> print thing
+         ['a','b','c'] 
+
+
+
+   
+         
+

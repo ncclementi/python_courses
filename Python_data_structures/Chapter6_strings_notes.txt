@@ -1,0 +1,61 @@
+* raw_input function in python 2 is renamed as input() in python 3
+
+  Example of how it works:
+    >>> name = input('Enter:')
+    Enter:naty
+    >>> print(name)
+    naty
+
+- We can access to each element by isung the index operator []
+- strings have length, we access to that information using the built in
+  function len()
+- We can loop through strings
+- We can slice and pull out sub-strings
+- The operator '+' for strings is for concatenate, remember it doesn't add spaces.
+
+* Built in function for strings. If we have a string s then:
+
+    - s.lower()   : gives a lower case copy of the string s.
+    - s.upper()   : gives a upper case copy of the string s.
+    - s.find('c') : it will find the character 'c' in the string and tells me
+                    where it finds it. For example:
+
+                 >>> fruit = 'banana'
+                 >>> pos   = fruit.find('na')
+                 >>> print(pos)
+                 2           
+
+                If it doesn't find anythin it'll ruturn -1
+
+    syntax: s.find(str, beg=0, end=len(string))
+
+    - s.replace() : gives a copy with the replacement I applied. For example:
+
+                >>> greet = 'Hello Bob'
+                >>> nstr  = greet.replace('o', 'X')
+                >>> print(nstr)
+                HellX BXb
+
+    - If we want to remove white spaces at the beginning or ending, we use
+        
+        - s.lstrip(): removes from the left.
+        - s.rstrip(): removes from the right.
+        - s.strip() : removes from both endings.
+
+    - When we are looking for prefixes, we use startswith function:
+        
+        >>> line = 'Please have a nice day'    
+        >>> line.startswith('Please')
+        True
+        >>> line.startswith('p') ### Notice is lowercase
+        False
+        >>> line.startswith('P') 
+        True
+
+
+To know all the things that are built in into a variable, we can use the function
+dir()
+
+    >>> dir(s)
+    ['capitalize',  'casefold', 'center', 'count', 'encode', 'endswith', ...]
+    

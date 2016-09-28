@@ -1,0 +1,15 @@
+assignment: Write code using find() and string slicing (see section 6.10) to 
+extract the number at the end of the line below. Convert the extracted value to
+a floating point number and print it out.
+
+text = "X-DSPAM-Confidence:    0.8475";
+
+#Here starts my code (I run it on ipython - it's python 2.7, course required)
+
+pos0 = text.find('0')
+
+str_num = text[pos0:]
+
+num_float = float(str_num)
+
+print num_float

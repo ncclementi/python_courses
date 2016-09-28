@@ -1,0 +1,138 @@
+* Tuples are like list, but they are NOT CHANGABLE, NOT MUTABLE.
+
+    They are another kind of sequence that function much like a list - they
+    have elements which are indexed starting at 0. 
+
+    Example:
+    
+    >>> x = ('a', 'b', 'c')
+    >>> print x[2]
+        b
+
+
+* NOT ALLOWED: append(), sort(), reverse() ----> because these will imply a
+               change and tuples are IMMUTABLE.
+
+* What are good at then? :
+
+    - They are simpler and more efficient in terms of memory use and performance
+      than lists. 
+
+    - So if we are making "temporary variables", we prefer tuples. 
+
+    - Tuples and Assignment
+    
+        >>> (x, y) = (4, 'fred') # We can avoid the parenthesis
+        >>> print y
+        fred
+
+
+* The items() in dictionaries returns a list of (key, values) tuples. 
+
+
+* Tuples are comparable.
+
+     The comparison operators work with tuples and other sequences. if the 
+     first item is equal, Python goes on to the next element, and so on, until
+     it finds elements that differ.
+
+        >>> (0, 1, 2) < (5, 1, 2) #here it stops at the first element
+        True
+
+        >>> (0, 1, 20) < (0, 3, 2) #here it stops at the second element
+        True
+
+        >>> ('Jones', 'Sally') < ('Jones', 'Fred') #here it stops at the second element
+        False           
+
+        >>> ('Jones', 'Sally') > ('Adams', 'Sam') #here it stops at the first element
+        True           
+
+
+* Sorting list of tuples
+
+    * Sort by keys: ()  this doesn't work in python 3 (only python 2) so use
+                   the sorted() next example.  
+
+    >>> d = {'a': 10, 'b': 1, 'c': 22}
+    >>> t = d.items()
+    >>> t 
+    [('a', 10), ('c', 22), ('b', 1)]
+    >>>t.sort()
+    [('a', 10), ('b', 1), ('c', 22)]  # Sorted by keys
+
+
+    # We can do this easier using the built in fucntion sorted().
+
+    >>> d = {'a': 10, 'b': 1, 'c': 22}
+    >>> d.items()
+    [('a', 10), ('c', 22), ('b', 1)]
+    >>> t = sorted(d.items())
+    [('a', 10), ('b', 1), ('c', 22)]  # Sorted by keys
+    
+
+    # and we can also do:
+
+    >>> for k, v in sorted(d.items()):
+        print k, v                    # We print the pais k, v  "k-sorted". 
+
+    a 10
+    b 1
+    c 22    
+    
+
+    * Sort by values:
+
+        Example: What if we want the first biggest 'n' values of a dictionary. 
+                 We need to sort by value. We will create a temporary list 
+                 we the order we decided (in this case (v, k)) and then we
+                 sort that list. 
+
+
+        >>> d = {'a': 10, 'b': 1, 'c': 22}
+        >>> tmp = list()
+        >>> for k, v in d.items():
+                tmp.append((v, k))
+
+        >>> print tmp
+        [(10, 'a'), (22, 'c'), (1, 'b')]
+    
+        >>> tmp.sort(reverse = True)
+        >>> print tmp
+        [(22, 'c'), (10, 'a'), (1, 'b')]
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
