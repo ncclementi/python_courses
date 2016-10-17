@@ -9,7 +9,7 @@
     - Dictionary: A "bag" of values, each with its own label (key).
 
 
-* Dictionaries don't mantain order, we index the things we put in the dictionary
+* Dictionaries don't maintain order, we index the things we put in the dictionary
   with a "lookup tag". Example:
 
     >>> purse = dict()          # we can also do purse = {}
@@ -21,7 +21,7 @@
     >>> print purse['candy']
     3
     >>> purse['candy'] = purse['candy'] + 2
-    >>> purse purse
+    >>> print purse
     {'money': 12, 'candy': 5, 'tissues': 75}
 
 * Dictionaries are good for counting how often do we "see" something.
