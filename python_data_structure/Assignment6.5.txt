@@ -6,9 +6,9 @@ text = "X-DSPAM-Confidence:    0.8475";
 
 #Here starts my code (I run it on ipython - it's python 2.7, course required)
 
-pos0 = text.find('0')
+pos0 = text.find(':')
 
-str_num = text[pos0:]
+str_num = text[pos0+1:]
 
 num_float = float(str_num)
 

@@ -22,13 +22,15 @@
          >>> lotto = [2,50,4,61]
          >>> print lotto
          [2,50,4,61]
-         >>> lotto [2] = 1
+         >>> lotto [1] = 1
          >>> print lotto
          [2,1,4,61]   # Notice we ahave 1 instead of 50 now!!!
     
     - len() function gives as the number of elements of the list.
 
-* The range function generates a list. 
+* The range function generates a list. (This is only in python 2, in python 3
+it generates a range type object, "The range type represents an immutable
+sequence of numbers") 
 
     >>> print range(4)
     [0, 1, 2, 3]
