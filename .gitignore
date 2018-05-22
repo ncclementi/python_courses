@@ -1,2 +1,3 @@
 .ipynb_checkpoints
 /intro_to_data_science_in_python/data_assignments/*
+.nbgrader.log
